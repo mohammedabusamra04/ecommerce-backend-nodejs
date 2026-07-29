@@ -1,24 +1,28 @@
 import type { NextFunction, Request, Response } from "express";
-import type { ZodType } from "zod";
+import { validationResult, type ValidationChain } from "express-validator";
 
 export function validate(
-    schema: ZodType,
-    source: "body" | "params" | "query" = "body"
+    validations: ValidationChain[]
 ) {
-    return (
+    return async (
         req: Request,
-        _res: Response,
+        res: Response,
         next: NextFunction
-    ): void => {
+    ): Promise<void> => {
 
-        const result = schema.safeParse(req[source]);
-
-        if (!result.success) {
-            next(result.error);
-            return;
+        for (const validation of validations) {
+            await validation.run(req);
         }
 
-        req[source] = result.data;
+        const errors = validationResult(req);
+
+        if (!errors.isEmpty()) {
+            res.status(400).json({
+                status: false,
+                errors: errors.array()
+            });
+            return;
+        }
 
         next();
     };

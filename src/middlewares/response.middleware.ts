@@ -25,9 +25,9 @@ export function responseFormatter(
         return res.status(code).json({
             status: false,
             code,
-            message: options.message ?? "Error",
-            errors: options.errors ?? null,
-            meta: options.meta ?? {}
+            message: options.message ?? 'Error',
+            data: null,
+            meta: options.meta ?? {},
         });
     };
 
