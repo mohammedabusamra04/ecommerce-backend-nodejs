@@ -1,31 +1,28 @@
 import { UserRepository } from "./user.repository.js";
-//init instance of userRepository
+import type {CreateUserInput,UpdateUserInput} from "./user.dto.js";
+
 const userRepository = new UserRepository();
 
 export class UserService {
 
-    async createUser(data: {
-        name: string;
-        email: string;
-        phoneNumber: string;
-        password: string;
-        role?: "user" | "admin";
-    }) {
-
-        const existingEmail = await userRepository.findByEmail(data.email);
-
-        if (existingEmail) {
-            throw new Error("Email already exists");
-        }
-
-        const existingPhone = await userRepository.findByPhoneNumber(data.phoneNumber);
-
-        if (existingPhone) {
-            throw new Error("Phone number already exists");
-        }
-        
-        const user = await userRepository.create(data);
-
-        return user;
+    async createUser(data: CreateUserInput) {
+        return userRepository.create(data);
     }
+
+    async getUsers() {
+        return userRepository.findAll();
+    }
+
+    async getUserById(id: string) {
+        return userRepository.findById(id);
+    }
+
+    async updateUser(id: string,data: UpdateUserInput) {
+        return userRepository.update(id, data);
+    }
+
+    async deleteUser(id: string) {
+        return userRepository.delete(id);
+    }
+
 }
