@@ -1,14 +1,13 @@
 import app from "./app.js";
-import sequelize from "./config/database.js";
+import { connectDatabase } from "./config/database.js";
+import { env } from "./config/env.js";
 
 const bootstrap = async (): Promise<void> => {
     try {
-        await sequelize.authenticate();
+        await connectDatabase();
 
-        console.log("Database connected successfully");
-
-        app.listen(3000, () => {
-            console.log("Server running on port 3000");
+        app.listen(env.PORT, () => {
+            console.log(`Server running on port ${env.PORT}`);
         });
     } catch (error) {
         console.error("Unable to start the application:", error);
