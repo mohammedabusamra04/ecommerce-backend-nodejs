@@ -1,30 +1,37 @@
-import { User } from "./user.module.js";
+import { User } from "./user.model.js";
+import type { CreateUserInput , UpdateUserInput } from "./user.dto.js";
 
 export class UserRepository {
 
-    async create(data: {
-        name: string;
-        email: string;
-        phoneNumber: string;
-        password: string;
-        role?: "user" | "admin";
-    }) {
-        return await User.create(data);
+    async create(data: CreateUserInput) {
+        return User.create(data);
+    }
+    
+    async findAll() {
+        return User.find();
     }
 
-    async findById(id: number) {
-        return await User.findByPk(id);
+    async findById(id: string) {
+        return User.findById(id);
+    }
+    async update(id: string, data: UpdateUserInput) {
+        return User.findByIdAndUpdate(
+            id,
+            data,
+            {
+                new: true
+            }
+        );
+    }
+    async delete(id: string) {
+        return User.findByIdAndDelete(id);
     }
 
     async findByEmail(email: string) {
-        return await User.findOne({
-            where: { email }
-        });
+        return User.findOne({email});
     }
 
     async findByPhoneNumber(phoneNumber: string) {
-        return await User.findOne({
-            where: { phoneNumber }
-        });
+        return User.findOne({phoneNumber});
     }
 }
