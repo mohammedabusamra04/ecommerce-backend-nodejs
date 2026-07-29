@@ -1,10 +1,15 @@
 import { Router } from "express";
-import { createUserSchema } from "./user.schema.js";
+import { createUserSchema,updateUserSchema,userIdSchema} from "./user.schema.js";
 import { validate } from "../../middlewares/validation.middleware.js";
 import * as userController from "./user.controller.js";
+export const userRoutes = Router();
 
-const router = Router();
+userRoutes.post("/", validate(createUserSchema), userController.createUser);
 
-router.post("/",validate(createUserSchema),userController.createUser);
+userRoutes.get("/", userController.getUsers);
 
-export default router;
+userRoutes.get("/:id",validate(userIdSchema, "params"),userController.getUserById);
+
+userRoutes.patch("/:id", validate(userIdSchema, "params"), validate(updateUserSchema), userController.updateUser);
+
+userRoutes.delete("/:id", validate(userIdSchema, "params"), userController.deleteUser);
