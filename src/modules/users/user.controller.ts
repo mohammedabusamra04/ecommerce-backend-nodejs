@@ -1,9 +1,7 @@
 import type { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
-import { UserService } from "./user.service.js";
 import type { CreateUserInput, UpdateUserInput} from "./user.dto.js";
-
-const userService = new UserService();
+import { userService } from "../../config/container.js";
 
 export async function createUser(
     req: Request<{}, {}, CreateUserInput>,

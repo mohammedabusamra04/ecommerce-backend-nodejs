@@ -3,35 +3,35 @@ import type { CreateUserInput , UpdateUserInput } from "./user.dto.js";
 
 export class UserRepository {
 
+    constructor(private userModel: typeof User) {}
+
     async create(data: CreateUserInput) {
-        return User.create(data);
+        return this.userModel.create(data);
     }
-    
+
     async findAll() {
-        return User.find();
+        return this.userModel.find();
     }
 
     async findById(id: string) {
-        return User.findById(id);
+        return this.userModel.findById(id);
     }
+
     async update(id: string, data: UpdateUserInput) {
-        return User.findByIdAndUpdate(
-            id,
-            data,
-            {
-                new: true
-            }
-        );
+        return this.userModel.findByIdAndUpdate(id, data, {
+            new: true
+        });
     }
+
     async delete(id: string) {
-        return User.findByIdAndDelete(id);
+        return this.userModel.findByIdAndDelete(id);
     }
 
     async findByEmail(email: string) {
-        return User.findOne({email});
+        return this.userModel.findOne({ email });
     }
 
     async findByPhoneNumber(phoneNumber: string) {
-        return User.findOne({phoneNumber});
+        return this.userModel.findOne({ phoneNumber });
     }
 }

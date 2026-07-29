@@ -1,28 +1,32 @@
-import { UserRepository } from "./user.repository.js";
-import type {CreateUserInput,UpdateUserInput} from "./user.dto.js";
-
-const userRepository = new UserRepository();
+import type { CreateUserInput, UpdateUserInput } from "./user.dto.js";
+import type { UserRepository } from "./user.repository.js";
 
 export class UserService {
 
+    constructor(private userRepository: UserRepository) {}
+
     async createUser(data: CreateUserInput) {
-        return userRepository.create(data);
+        return this.userRepository.create(data);
     }
+
 
     async getUsers() {
-        return userRepository.findAll();
+        return this.userRepository.findAll();
     }
+
 
     async getUserById(id: string) {
-        return userRepository.findById(id);
+        return this.userRepository.findById(id);
     }
 
-    async updateUser(id: string,data: UpdateUserInput) {
-        return userRepository.update(id, data);
+
+    async updateUser(id: string, data: UpdateUserInput) {
+        return this.userRepository.update(id, data);
     }
+
 
     async deleteUser(id: string) {
-        return userRepository.delete(id);
+        return this.userRepository.delete(id);
     }
 
 }
