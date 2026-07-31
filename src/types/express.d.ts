@@ -1,3 +1,5 @@
+import type { TokenPayload } from "../utils/jwt.js";
+
 declare global {
     namespace Express {
         interface Response {
@@ -18,6 +20,11 @@ declare global {
                     meta?: Record<string, unknown>;
                 }
             ): Response;
+        }
+
+
+        interface Request {
+            user?: TokenPayload;
         }
     }
 }
