@@ -29,4 +29,15 @@ export class UserService {
         return this.userRepository.delete(id);
     }
 
+    async getUserByEmail(email: string) {
+        return this.userRepository.findByEmail(email);
+    }
+
+    async getUserByEmailWithPassword(email: string) {
+        return this.userRepository.findOneByEmailWithPassword(email);
+    }
+
+    async getUserByPhoneNumber(phoneNumber: string) {
+        return this.userRepository.findByPhoneNumber(phoneNumber);
+    }
 }

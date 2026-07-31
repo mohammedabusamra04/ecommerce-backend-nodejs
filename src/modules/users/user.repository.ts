@@ -18,9 +18,14 @@ export class UserRepository {
     }
 
     async update(id: string, data: UpdateUserInput) {
-        return this.userModel.findByIdAndUpdate(id, data, {
-            new: true
-        });
+        return this.userModel.findByIdAndUpdate(
+            id,
+            data,
+            {
+                new: true,
+                runValidators: true
+            }
+        );
     }
 
     async delete(id: string) {
@@ -33,5 +38,11 @@ export class UserRepository {
 
     async findByPhoneNumber(phoneNumber: string) {
         return this.userModel.findOne({ phoneNumber });
+    }
+
+    async findOneByEmailWithPassword(email: string) {
+        return this.userModel
+            .findOne({ email })
+            .select("+password");
     }
 }
