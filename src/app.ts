@@ -1,5 +1,6 @@
 import express from "express";
 import { userRoutes } from "./modules/users/user.routes.js";
+import { authRoutes } from "./modules/auth/auth.routes.js";
 import { responseFormatter } from "./middlewares/response.middleware.js";
 import { errorHandler } from "./middlewares/error.middleware.js";
 
@@ -9,7 +10,11 @@ app.use(express.json());
 
 app.use(responseFormatter);
 
-app.use("/api/users",userRoutes );
+
+app.use("/api/auth", authRoutes);
+
+app.use("/api/users", userRoutes);
+
 
 app.use(errorHandler);
 
