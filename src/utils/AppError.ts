@@ -35,4 +35,11 @@ export class AppError extends Error {
             StatusCodes.CONFLICT
         );
     }
+
+    static unauthorized(message: string) {
+        return new AppError(
+            message,
+            StatusCodes.UNAUTHORIZED
+        );
+    }
 }
