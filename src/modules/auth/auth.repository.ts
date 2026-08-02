@@ -15,13 +15,19 @@ export class AuthRepository {
     async findByTokenHash(tokenHash: string) {
         return this.refreshTokenModel.findOne({
             tokenHash,
-            revokedAt: null
+            revokedAt: null,
+            expiresAt: {
+                $gt: new Date()
+            }
         });
     }
 
     async revokeToken(tokenHash: string) {
         return this.refreshTokenModel.findOneAndUpdate(
-            { tokenHash },
+            {
+                tokenHash,
+                revokedAt: null
+            },
             {
                 revokedAt: new Date()
             },
