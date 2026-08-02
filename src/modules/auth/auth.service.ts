@@ -7,6 +7,8 @@ import { generateAccessToken, generateRefreshToken ,verifyAccessToken ,verifyRef
 import { jwtConfig } from "../../config/jwt.js";
 import { AppError } from "../../utils/AppError.js";
 
+import ms from "ms";
+
 export class AuthService {
 
     constructor(
@@ -39,12 +41,12 @@ export class AuthService {
     
         const tokenHash = hashToken(refreshToken);
     
-        const refreshExpires = Number(jwtConfig.refreshToken.expiresIn.replace("d", ""));
+        const refreshExpires = ms(jwtConfig.refreshToken.expiresIn);
 
         await this.authRepository.create({
              userId: user._id.toString(),
              tokenHash,
-             expiresAt: new Date( Date.now() + refreshExpires * 24 * 60 * 60 * 1000)
+             expiresAt: new Date( Date.now() + refreshExpires)
         });
     
         return {
@@ -84,12 +86,12 @@ export class AuthService {
 
         const tokenHash = hashToken(refreshToken);
 
-        const refreshExpires = Number(jwtConfig.refreshToken.expiresIn.replace("d", ""));
+        const refreshExpires = ms(jwtConfig.refreshToken.expiresIn);
 
         await this.authRepository.create({
             userId: user._id.toString(),
             tokenHash,
-            expiresAt: new Date(Date.now() + refreshExpires * 24 * 60 * 60 * 1000 )
+            expiresAt: new Date(Date.now() + refreshExpires )
         });
 
         return {
@@ -127,12 +129,12 @@ export class AuthService {
     
         const newTokenHash = hashToken(newRefreshToken);
 
-        const refreshExpires = Number(jwtConfig.refreshToken.expiresIn.replace("d", ""));
+        const refreshExpires = ms(jwtConfig.refreshToken.expiresIn);
     
         await this.authRepository.create({
             userId: payload.id,
             tokenHash: newTokenHash,
-            expiresAt: new Date( Date.now() + refreshExpires * 24 * 60 * 60 * 1000)
+            expiresAt: new Date( Date.now() + refreshExpires)
         });
     
         return {
