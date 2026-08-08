@@ -1,4 +1,5 @@
-import { body, param } from "express-validator";import { userRepository } from "../../config/container.js";
+import { body, param } from "express-validator";
+import { userService } from "../../config/container.js";
 import { AppError } from "../../utils/AppError.js";
 
 export const createUserValidator = [
@@ -19,7 +20,7 @@ export const createUserValidator = [
         .withMessage("Invalid email")
         .normalizeEmail()
         .custom(async (email) => {
-            const existingUser = await userRepository.findByEmail(email);
+            const existingUser = await userService.getUserByEmail(email); //findByEmail(email);
     
             if (existingUser) {
                 throw AppError.conflict(
@@ -39,8 +40,7 @@ export const createUserValidator = [
         .isLength({ min: 7 })
         .withMessage("Phone number is invalid")
         .custom(async (phoneNumber) => {
-            const existingUser =
-                await userRepository.findByPhoneNumber(phoneNumber);
+            const existingUser = await userService.getUserByPhoneNumber(phoneNumber);
     
             if (existingUser) {
                 throw AppError.conflict(
@@ -110,7 +110,7 @@ export const updateUserValidator = [
         .withMessage("Invalid email")
         .normalizeEmail()
         .custom(async (email) => {
-            const existingUser = await userRepository.findByEmail(email);
+            const existingUser = await userService.getUserByEmail(email);
     
             if (existingUser) {
                 throw AppError.conflict(
@@ -131,7 +131,7 @@ export const updateUserValidator = [
         .withMessage("Phone number is invalid")
         .custom(async (phoneNumber) => {
             const existingUser =
-                await userRepository.findByPhoneNumber(phoneNumber);
+                await userService.getUserByPhoneNumber(phoneNumber);
     
             if (existingUser) {
                 throw AppError.conflict(
@@ -194,7 +194,7 @@ export const userIdValidator = [
         .custom(async (id) => {
 
             const existingUser =
-                await userRepository.findById(id);
+                await userService.getUserById(id);
 
             if (!existingUser) {
                 throw AppError.notFound(
