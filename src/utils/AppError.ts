@@ -42,4 +42,11 @@ export class AppError extends Error {
             StatusCodes.UNAUTHORIZED
         );
     }
+
+    static forbidden(message: string) {
+        return new AppError(
+            message,
+            StatusCodes.FORBIDDEN
+        );
+    }
 }
