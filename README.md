@@ -1,7 +1,10 @@
-# 🛒 ShopCore — E-Commerce Backend API
+# 🛒 E-Commerce Backend API
 
-ShopCore is a modular, production-oriented **E-Commerce Backend API**. Built with **Node.js**, **Express**, and **TypeScript**, it provides a clean foundation for authentication, user management, and a flexible product catalog with categories, variants, and per-variant inventory tracking.
+A modular **E-Commerce Backend API** built with **Node.js**, **Express**, and **TypeScript**.
 
+The project focuses on practicing backend development concepts such as authentication, user management, product catalogs, categories, variants, and inventory management.
+
+It was built for **learning, practice, and portfolio purposes**, with an emphasis on clean code, modular architecture, API design, and practical backend concepts.
 ---
 
 ## ✨ Features
@@ -248,4 +251,4 @@ Example variant body:
 
 ## 📄 License
 
-This project is intended for learning and portfolio use.
+This project was built for learning, practice, and portfolio purposes.
