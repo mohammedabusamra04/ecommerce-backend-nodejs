@@ -3,7 +3,7 @@ import type { AuthRepository } from "./auth.repository.js";
 import type { RegisterInput, LoginInput } from "./auth.dto.js";
 
 import { hashValue, compareValue , hashToken } from "../../utils/bcrypt.js";
-import { generateAccessToken, generateRefreshToken ,verifyAccessToken ,verifyRefreshToken  } from "../../utils/jwt.js";
+import { generateAccessToken, generateRefreshToken, verifyRefreshToken  } from "../../utils/jwt.js";
 import { jwtConfig } from "../../config/jwt.js";
 import { AppError } from "../../utils/AppError.js";
 

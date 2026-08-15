@@ -51,24 +51,3 @@ export async function authMiddleware(
     }
 }
 
-export function authorize(...roles: UserRole[]) {
-    return (
-        req: Request,
-        _res: Response,
-        next: NextFunction
-    ): void => {
-        if (!req.user) {
-            throw AppError.unauthorized(
-                "Authentication required"
-            );
-        }
-
-        if (!req.user.role || !roles.includes(req.user.role as UserRole)) {
-            throw AppError.forbidden(
-                "You do not have permission to perform this action"
-            );
-        }
-
-        next();
-    };
-}

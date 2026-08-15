@@ -1,9 +1,10 @@
 import { env } from "./env.js";
 import type { StringValue } from "ms";
+import { AppError } from "../utils/AppError.js";
 
 
 if (!env.ACCESS_TOKEN_SECRET || !env.REFRESH_TOKEN_SECRET) {
-    throw new Error("JWT secrets are missing");
+    throw new AppError("JWT secrets are missing");
 }
 
 

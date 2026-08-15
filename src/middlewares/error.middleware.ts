@@ -12,7 +12,6 @@ export function errorHandler(
     _next: NextFunction
 ): void {
 
-
     if (err instanceof AppError) {
         res.fail({
             code: err.statusCode,
