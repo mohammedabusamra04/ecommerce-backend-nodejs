@@ -1,0 +1,3486 @@
+{
+  "info": {
+    "_postman_id": "5f6ea74d-7c78-4a0a-b6fa-38c57c163455",
+    "name": "Ecommerce API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52866052",
+    "_collection_link": "https://go.postman.co/collection/52866052-5f6ea74d-7c78-4a0a-b6fa-38c57c163455?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyMjg3NywiZXhwIjoxNzg2NzIzNzc3fQ.KHtnm_RSFfronezz31kYzVHbk9jksX9vXkdUEZSKWSw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"iPhone 17 Pro\",\r\n  \"sku\": \"IPHONE-17-PRO\",\r\n  \"slug\": \"iphone-17-pro\",\r\n  \"description\": \"Apple iPhone 17 Pro\",\r\n  \"brand\": \"Apple\",\r\n  \"categorySlug\": \"smart-phones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"150-AoyVcPP3/tbrpNwbUy3zXC7xuJY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 16:02:11 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Apple iPhone 17 Pro\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"smart-phones\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T16:02:11.397Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"laptops\",\r\n  \"slug\": \"laptops\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"256GB\",\"512GB\",\"1TB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "464"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1d0-x1cYn6grhtCbbN+LxyPerdsFZYk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:22:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"name\": \"laptops\",\n        \"slug\": \"laptops\",\n        \"description\": \"Mobile phones category\",\n        \"attributes\": [\n            {\n                \"key\": \"color\",\n                \"label\": \"Color\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"Black\",\n                    \"White\"\n                ]\n            },\n            {\n                \"key\": \"storage\",\n                \"label\": \"Storage\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"256GB\",\n                    \"512GB\",\n                    \"1TB\"\n                ]\n            }\n        ],\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T17:22:31.557Z\",\n        \"updatedAt\": \"2026-08-14T17:22:31.557Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"MacBook Air\",\r\n  \"sku\": \"MacBook-Air\",\r\n  \"slug\": \"macbook-air\",\r\n  \"description\": \"Apple MacBook Air\",\r\n  \"brand\": \"Apple\",\r\n  \"categorySlug\": \"laptops\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "323"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"143-HMVf5VOV78YCSTbNmNm4mZeuZDU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:26:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"MacBook Air\",\n        \"sku\": \"MacBook-Air\",\n        \"slug\": \"macbook-air\",\n        \"description\": \"Apple MacBook Air\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"laptops\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T17:26:21.118Z\",\n        \"updatedAt\": \"2026-08-14T17:26:21.118Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product Missing Name",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product Missing Name",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"sku\": \"IPHONE-17-PRO\",\r\n  \"slug\": \"iphone-17-pro\",\r\n  \"brand\": \"Apple\",\r\n  \"category\": \"smart-phones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "631"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"277-GlZUFbWezeggbe2U3KjNvxSfhGs\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:29:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Product name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"IPHONE-17-PRO\",\n            \"msg\": \"SKU already exists\",\n            \"path\": \"sku\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"iphone-17-pro\",\n            \"msg\": \"Slug already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category slug is required\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Invalid category slug\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category with slug  does not exist\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product Missing SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product Missing SKU",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"iPhone 17 Pro\",\r\n  \"slug\": \"iphone-17-pro\",\r\n  \"brand\": \"Apple\",\r\n  \"category\": \"smart-phones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "530"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"212-z43cmt9VzQ5odH6oS9oIqklyzzE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:30:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Product SKU is required\",\n            \"path\": \"sku\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"iphone-17-pro\",\n            \"msg\": \"Slug already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category slug is required\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Invalid category slug\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category with slug  does not exist\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product By Same Exists SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product By Same Exists SKU",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"MacBook Air 2\",\r\n  \"sku\": \"MacBook-Air\",\r\n  \"slug\": \"macbook-air\",\r\n  \"description\": \"Apple MacBook Air\",\r\n  \"brand\": \"Apple\",\r\n  \"categorySlug\": \"laptops\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "223"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"df-fPIK2sHnLG/6uo5wPxAVrw2bFpg\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:33:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"MacBook-Air\",\n            \"msg\": \"SKU already exists\",\n            \"path\": \"sku\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"macbook-air\",\n            \"msg\": \"Slug already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product By Same Exists Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product By Same Exists Slug",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyODA2MiwiZXhwIjoxNzg2NzI4OTYyfQ.0g8zN_DVvdI1Kp3m86M7ML0Nw3Cc-UeOQwnoobx0hLM",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"iPhone 18 Pro\",\r\n  \"sku\": \"IPHONE-18-PRO\",\r\n  \"slug\": \"iphone-17-pro\",\r\n  \"brand\": \"Apple\",\r\n  \"category\": \"smart-phones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "439"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b7-SMHwkRZuRm4YiIjgXgCPFgm9HIc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:35:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"iphone-17-pro\",\n            \"msg\": \"Slug already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category slug is required\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Invalid category slug\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category with slug  does not exist\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product By Invalid Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product By Invalid Slug",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyOTEyNiwiZXhwIjoxNzg2NzMwMDI2fQ.sxzIeGhWqzCRGkJHnfG-ltVE_ZMXupFVDPEB2UV_YDw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Samsung\",\r\n  \"sku\": \"SAMSUNG-S25\",\r\n  \"slug\": \"Samsung S25\",\r\n  \"brand\": \"Samsung\",\r\n  \"category\": \"smart-phones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "493"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1ed-3DkInlKYblMPT5U7Q/yAfRGAyAU\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:39:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Samsung S25\",\n            \"msg\": \"Slug must be lowercase and contain only alphanumeric characters and hyphens\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category slug is required\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Invalid category slug\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category with slug  does not exist\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product By Does Not Exists Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product By Does Not Exists Category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyOTEyNiwiZXhwIjoxNzg2NzMwMDI2fQ.sxzIeGhWqzCRGkJHnfG-ltVE_ZMXupFVDPEB2UV_YDw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"MacBook Pro\",\r\n  \"sku\": \"MACBOOK-PRO-2026\",\r\n  \"slug\": \"macbook-pro-2026\",\r\n  \"brand\": \"Apple\",\r\n  \"category\": \"cars\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "338"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"152-F7WvtkzneDA6t/GxN7QRmVFEIvk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:41:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category slug is required\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Invalid category slug\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category with slug  does not exist\",\n            \"path\": \"categorySlug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get All Products",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "963"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"3c3-ENgjWg9xoOq1CAh024TJw//KVwc\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:42:56 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Products fetched successfully\",\n    \"data\": [\n        {\n            \"name\": \"Classic Cotton T-Shirt\",\n            \"description\": \"Classic cotton t-shirt\",\n            \"brand\": \"BasicWear\",\n            \"category\": {},\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-09T18:37:27.661Z\",\n            \"updatedAt\": \"2026-08-09T18:37:27.661Z\"\n        },\n        {\n            \"name\": \"Toyota Corolla 2024\",\n            \"description\": \"Sedan car\",\n            \"brand\": \"Toyota\",\n            \"category\": {},\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-09T18:56:23.242Z\",\n            \"updatedAt\": \"2026-08-09T18:56:23.242Z\"\n        },\n        {\n            \"name\": \"iPhone 17 Pro\",\n            \"sku\": \"IPHONE-17-PRO\",\n            \"slug\": \"iphone-17-pro\",\n            \"description\": \"Apple iPhone 17 Pro\",\n            \"brand\": \"Apple\",\n            \"category\": {\n                \"slug\": \"smart-phones\"\n            },\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n            \"updatedAt\": \"2026-08-14T16:02:11.397Z\"\n        },\n        {\n            \"name\": \"MacBook Air\",\n            \"sku\": \"MacBook-Air\",\n            \"slug\": \"macbook-air\",\n            \"description\": \"Apple MacBook Air\",\n            \"brand\": \"Apple\",\n            \"category\": {\n                \"slug\": \"laptops\"\n            },\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-14T17:26:21.118Z\",\n            \"updatedAt\": \"2026-08-14T17:26:21.118Z\"\n        }\n    ],\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product By SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Product By SKU",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"150-UM8OYigWRYtOlfkBEREb1IfJ464\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:44:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product fetched successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Apple iPhone 17 Pro\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"smart-phones\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T16:02:11.397Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product By Does Not Exists SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Product By Does Not Exists SKU",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-18-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-18-PRO"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4f-QXb5XaOGtOyoKg9pCucevfNUIA4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:45:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"code\": 404,\n    \"message\": \"Product not found\",\n    \"data\": null,\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product By Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Product By Slug",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/slug/iphone-17-pro",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "slug",
+                    "iphone-17-pro"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"150-UM8OYigWRYtOlfkBEREb1IfJ464\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:46:51 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product fetched successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Apple iPhone 17 Pro\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"smart-phones\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T16:02:11.397Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Product By Does Not Exists Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Product By Does Not Exists Slug",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/slug/iphone-18-pro",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "slug",
+                    "iphone-18-pro"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4f-QXb5XaOGtOyoKg9pCucevfNUIA4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:47:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"code\": 404,\n    \"message\": \"Product not found\",\n    \"data\": null,\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By SKU",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjcyOTEyNiwiZXhwIjoxNzg2NzMwMDI2fQ.sxzIeGhWqzCRGkJHnfG-ltVE_ZMXupFVDPEB2UV_YDw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"iPhone 17 Pro Max\",\r\n  \"description\": \"Updated description\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "340"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"154-xZIYO9sjxyc7B5/HjNYtk7cBoOw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 17:51:01 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro Max\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Updated description\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"smart-phones\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T17:51:01.719Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Changing Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Changing Category",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMDA5MSwiZXhwIjoxNzg2NzMwOTkxfQ.raXvaLIZtEDvHqvrCq7s9I-aasRD4sZC4KIarzT66tU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"categorySlug\": \"laptops\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "335"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"14f-2FsgxdoGJYH20tbxjSXcqp17d+k\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:01:29 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro Max\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Updated description\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"laptops\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T18:01:29.365Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Slug",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMDA5MSwiZXhwIjoxNzg2NzMwOTkxfQ.raXvaLIZtEDvHqvrCq7s9I-aasRD4sZC4KIarzT66tU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"brand\": \"Apple\",\r\n  \"description\": \"Updated iPhone description\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/slug/iphone-17-pro",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "slug",
+                    "iphone-17-pro"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "342"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"156-xIiv+2u9Hh34gbyru72tMBhIdW4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:05:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"name\": \"iPhone 17 Pro Max\",\n        \"sku\": \"IPHONE-17-PRO\",\n        \"slug\": \"iphone-17-pro\",\n        \"description\": \"Updated iPhone description\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"laptops\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-14T16:02:11.397Z\",\n        \"updatedAt\": \"2026-08-14T18:05:52.496Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Same SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Same SKU",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMDA5MSwiZXhwIjoxNzg2NzMwOTkxfQ.raXvaLIZtEDvHqvrCq7s9I-aasRD4sZC4KIarzT66tU",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"sku\" : \"MacBook-Air\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "143"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"8f-k8GHF/EAhQF9swOne9KoG/VMM0E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:09:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"MacBook-Air\",\n            \"msg\": \"SKU already exists on another product\",\n            \"path\": \"sku\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Same Exists Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Same Exists Slug",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMTIwOSwiZXhwIjoxNzg2NzMyMTA5fQ.iFJeS9xlrlWMSicfa4CkzKWu-aaLmtLQ68v6U_BPljw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"slug\": \"macbook-air\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "145"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"91-X0EVW1TtFkPLkGyireOPEYwe938\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:15:05 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"macbook-air\",\n            \"msg\": \"Slug already exists on another product\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Invalid Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Invalid Slug",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMTIwOSwiZXhwIjoxNzg2NzMyMTA5fQ.iFJeS9xlrlWMSicfa4CkzKWu-aaLmtLQ68v6U_BPljw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"slug\": \"iPhone 17 Pro\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "184"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b8-ADZjJlFbtGtjRsmQDx0p8EkVqFw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:17:56 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"iPhone 17 Pro\",\n            \"msg\": \"Slug must be lowercase and contain only alphanumeric characters and hyphens\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Product By Empty Name",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Product By Empty Name",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMTIwOSwiZXhwIjoxNzg2NzMyMTA5fQ.iFJeS9xlrlWMSicfa4CkzKWu-aaLmtLQ68v6U_BPljw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/IPHONE-17-PRO",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "IPHONE-17-PRO"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "124"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"7c-9NI1GfeKyChclF8hGhdxjofWxcE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:19:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Product name cannot be empty\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Product By SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Delete Product By SKU",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjczMTIwOSwiZXhwIjoxNzg2NzMyMTA5fQ.iFJeS9xlrlWMSicfa4CkzKWu-aaLmtLQ68v6U_BPljw",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/MacBook-Air",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "MacBook-Air"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "345"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"159-G/9ntRI7SXj6FeaoT6HxwihL17Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:24:30 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Product deleted successfully\",\n    \"data\": {\n        \"name\": \"MacBook Air\",\n        \"sku\": \"MacBook-Air\",\n        \"slug\": \"macbook-air\",\n        \"description\": \"Apple MacBook Air\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"laptops\"\n        },\n        \"deletedAt\": \"2026-08-14T18:24:30.623Z\",\n        \"createdAt\": \"2026-08-14T17:26:21.118Z\",\n        \"updatedAt\": \"2026-08-14T18:24:30.623Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Deleted Prodcut",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Deleted Prodcut",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/products/sku/MacBook-Air",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "sku",
+                    "MacBook-Air"
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "79"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"4f-QXb5XaOGtOyoKg9pCucevfNUIA4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 14 Aug 2026 18:27:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"code\": 404,\n    \"message\": \"Product not found\",\n    \"data\": null,\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Product After Soft Deletr",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Product After Soft Deletr",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwMzI5NSwiZXhwIjoxNzg2ODA0MTk1fQ.iHmvrUJHMcMqgQM4n9HQRKb9K1kMMxjHOhgVvGsjJ-4",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"MacBook Air\",\r\n  \"sku\": \"MacBook-Air\",\r\n  \"slug\": \"macbook-air\",\r\n  \"description\": \"Apple MacBook Air\",\r\n  \"brand\": \"Apple\",\r\n  \"categorySlug\": \"laptops\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "323"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"143-GeXaS5k7aim+W1EOT6SXyoilP70\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 14:17:54 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Product created successfully\",\n    \"data\": {\n        \"name\": \"MacBook Air\",\n        \"sku\": \"MacBook-Air\",\n        \"slug\": \"macbook-air\",\n        \"description\": \"Apple MacBook Air\",\n        \"brand\": \"Apple\",\n        \"category\": {\n            \"slug\": \"laptops\"\n        },\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T14:17:54.715Z\",\n        \"updatedAt\": \"2026-08-15T14:17:54.715Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "login user",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "login user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"user@test.com\",\r\n  \"password\": \"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "753"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"2f1-HwW1jg/UelnzA5nT4jxfgkXWnL8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:24:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"address\": {\n                \"city\": \"Ramallah\",\n                \"street\": \"Main\",\n                \"country\": \"Palestine\"\n            },\n            \"_id\": \"6a78cb280043b58525aad4e1\",\n            \"name\": \"Test User\",\n            \"email\": \"user@test.com\",\n            \"phoneNumber\": \"0599000001\",\n            \"role\": \"customer\",\n            \"createdAt\": \"2026-08-09T18:47:04.295Z\",\n            \"updatedAt\": \"2026-08-09T18:47:04.295Z\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxMzA3MywiZXhwIjoxNzg2NjEzOTczfQ.i9ZveX8fQSbSv2K95QvtdTEyNeCxpW-rZPGpFkVv-ss\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsImlhdCI6MTc4NjYxMzA3MywiZXhwIjoxNzg5MjA1MDczfQ.4_mFDhkBwbxgZpoNLbJAtbjoNBvMspQWxT2Dz-8EO0g\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Category",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxMzA3MywiZXhwIjoxNzg2NjEzOTczfQ.i9ZveX8fQSbSv2K95QvtdTEyNeCxpW-rZPGpFkVv-ss",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Smart Phones\",\r\n  \"slug\": \"smart-phones\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "520"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"208-/lITQ8sw0KBh+Hf3AZFVmT41XR4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:36:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Category created successfully\",\n    \"data\": {\n        \"name\": \"Smart Phones\",\n        \"slug\": \"smart-phones\",\n        \"description\": \"Mobile phones category\",\n        \"attributes\": [\n            {\n                \"key\": \"color\",\n                \"label\": \"Color\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"Black\",\n                    \"Blue\",\n                    \"White\"\n                ]\n            },\n            {\n                \"key\": \"storage\",\n                \"label\": \"Storage\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"8GB\",\n                    \"12GB\",\n                    \"16GB\"\n                ]\n            }\n        ],\n        \"deletedAt\": null,\n        \"_id\": \"6a7d902868df2db1faecd9ea\",\n        \"createdAt\": \"2026-08-13T09:36:41.019Z\",\n        \"updatedAt\": \"2026-08-13T09:36:41.019Z\",\n        \"__v\": 0\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Duplicate Category Name",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Duplicate Category Name",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNDEwMCwiZXhwIjoxNzg2NjE1MDAwfQ.D39LlL3PACeYtNbwOy8dUQb_EWT9QGBUOoR7vUnw_Wk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Smart Phones\",\r\n  \"slug\": \"smart-phones\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "281"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"119-kHqzlSL/2yyazVdnj2qNsn6D25E\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:42:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smart Phones\",\n            \"msg\": \"Category with name Smart Phones already exists\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phones\",\n            \"msg\": \"Category with slug smart-phones already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Duplicate Category Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Duplicate Category Slug",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNDEwMCwiZXhwIjoxNzg2NjE1MDAwfQ.D39LlL3PACeYtNbwOy8dUQb_EWT9QGBUOoR7vUnw_Wk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Cars\",\r\n  \"slug\": \"smart-phones\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "265"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"109-KPNt3iu0F591xWeZYxTdvVRLc6c\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:45:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Cars\",\n            \"msg\": \"Category with name Cars already exists\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phones\",\n            \"msg\": \"Category with slug smart-phones already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Invalid Category Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Invalid Category Slug",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNDEwMCwiZXhwIjoxNzg2NjE1MDAwfQ.D39LlL3PACeYtNbwOy8dUQb_EWT9QGBUOoR7vUnw_Wk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Invalid Category\",\r\n  \"slug\": \"Smart Phones!\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "184"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b8-Zz5nwD6HmEgejuoIzq15j3Oraek\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:48:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smart Phones!\",\n            \"msg\": \"Slug must be lowercase and contain only alphanumeric characters and hyphens\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Missing Category Name",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Missing Category Name",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNDEwMCwiZXhwIjoxNzg2NjE1MDAwfQ.D39LlL3PACeYtNbwOy8dUQb_EWT9QGBUOoR7vUnw_Wk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"slug\": \"smart-phones\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "248"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"f8-YnAeTVZQMe6cROIRfrn6kze1p4I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:50:38 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"\",\n            \"msg\": \"Category name is required\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phones\",\n            \"msg\": \"Category with slug smart-phones already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Invalid Attributes",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Invalid Attributes",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNDEwMCwiZXhwIjoxNzg2NjE1MDAwfQ.D39LlL3PACeYtNbwOy8dUQb_EWT9QGBUOoR7vUnw_Wk",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Invalid Category\",\r\n  \"slug\": \"Smart Phones!\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": \"A51\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "289"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"121-YgiqZ2yDJ6c9ofIe0ODvnLWl25U\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:53:21 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smart Phones!\",\n            \"msg\": \"Slug must be lowercase and contain only alphanumeric characters and hyphens\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"A51\",\n            \"msg\": \"Attributes must be an array\",\n            \"path\": \"attributes\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Invalid Attribute Type",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Invalid Attribute Type",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNTA0MSwiZXhwIjoxNzg2NjE1OTQxfQ.dRSlEVOygINFADr1ApP0NM3_VWQK9akdYJaSS3QweM0",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Smart Phones\",\r\n  \"slug\": \"smart-phones\",\r\n  \"description\": \"Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"color\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "415"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"19f-Nk/cMjZfD7s7PwKn8D/8rZhz6HE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:57:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smart Phones\",\n            \"msg\": \"Category with name Smart Phones already exists\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phones\",\n            \"msg\": \"Category with slug smart-phones already exists\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        },\n        {\n            \"type\": \"field\",\n            \"value\": \"color\",\n            \"msg\": \"Attribute type must be text, number, or select\",\n            \"path\": \"attributes[0].type\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get All Categories",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get All Categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1109"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"455-kVnbNIIcgXBLs8CwAJKBEEId/6Q\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 09:59:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Categories fetched successfully\",\n    \"data\": [\n        {\n            \"_id\": \"6a78c19fb81df1534461895e\",\n            \"name\": \"Clothes\",\n            \"description\": \"Clothing products\",\n            \"attributes\": [\n                {\n                    \"key\": \"size\",\n                    \"label\": \"Size\",\n                    \"type\": \"select\",\n                    \"required\": true,\n                    \"options\": [\n                        \"S\",\n                        \"M\",\n                        \"L\",\n                        \"XL\"\n                    ]\n                }\n            ],\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-09T18:06:23.051Z\",\n            \"updatedAt\": \"2026-08-09T18:06:23.051Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a78cc2b0043b58525aad4e3\",\n            \"name\": \"Cars\",\n            \"description\": \"Vehicles\",\n            \"attributes\": [\n                {\n                    \"key\": \"color\",\n                    \"label\": \"Color\",\n                    \"type\": \"select\",\n                    \"required\": true,\n                    \"options\": [\n                        \"white\",\n                        \"black\",\n                        \"red\"\n                    ]\n                }\n            ],\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-09T18:51:23.834Z\",\n            \"updatedAt\": \"2026-08-09T18:51:23.834Z\",\n            \"__v\": 0\n        },\n        {\n            \"_id\": \"6a7d902868df2db1faecd9ea\",\n            \"name\": \"Smart Phones\",\n            \"slug\": \"smart-phones\",\n            \"description\": \"Mobile phones category\",\n            \"attributes\": [\n                {\n                    \"key\": \"color\",\n                    \"label\": \"Color\",\n                    \"type\": \"select\",\n                    \"required\": true,\n                    \"options\": [\n                        \"Black\",\n                        \"Blue\",\n                        \"White\"\n                    ]\n                },\n                {\n                    \"key\": \"storage\",\n                    \"label\": \"Storage\",\n                    \"type\": \"select\",\n                    \"required\": true,\n                    \"options\": [\n                        \"8GB\",\n                        \"12GB\",\n                        \"16GB\"\n                    ]\n                }\n            ],\n            \"deletedAt\": null,\n            \"createdAt\": \"2026-08-13T09:36:41.019Z\",\n            \"updatedAt\": \"2026-08-13T09:36:41.019Z\",\n            \"__v\": 0\n        }\n    ],\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Category By Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Category By Slug",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "520"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"208-ypJxbZ8yWgE4JRLXU4YHB1eharM\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:00:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Category fetched successfully\",\n    \"data\": {\n        \"_id\": \"6a7d902868df2db1faecd9ea\",\n        \"name\": \"Smart Phones\",\n        \"slug\": \"smart-phones\",\n        \"description\": \"Mobile phones category\",\n        \"attributes\": [\n            {\n                \"key\": \"color\",\n                \"label\": \"Color\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"Black\",\n                    \"Blue\",\n                    \"White\"\n                ]\n            },\n            {\n                \"key\": \"storage\",\n                \"label\": \"Storage\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"8GB\",\n                    \"12GB\",\n                    \"16GB\"\n                ]\n            }\n        ],\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-13T09:36:41.019Z\",\n        \"updatedAt\": \"2026-08-13T09:36:41.019Z\",\n        \"__v\": 0\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Category Not Found",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Category Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phoness",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phoness"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "129"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"81-PKCxYhZZgQ5hHe6hzPf3uyQzRBw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:01:40 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phoness\",\n            \"msg\": \"Category not found\",\n            \"path\": \"slug\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Invalid Slug Format",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Invalid Slug Format",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/Smart_Phone",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "Smart_Phone"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "128"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"80-wAZte+GagvXI6cnNDFKQWAj7aHA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:02:44 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smart_Phone\",\n            \"msg\": \"Invalid slug format\",\n            \"path\": \"slug\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Category",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNTA0MSwiZXhwIjoxNzg2NjE1OTQxfQ.dRSlEVOygINFADr1ApP0NM3_VWQK9akdYJaSS3QweM0",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"description\": \"Update Mobile phones category\",\r\n  \"attributes\": [\r\n    {\r\n      \"key\": \"color\",\r\n      \"label\": \"Color\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"Black\",\"Blue\",\"White\",\"Red\"]\r\n    },\r\n    {\r\n      \"key\": \"storage\",\r\n      \"label\": \"Storage\",\r\n      \"type\": \"select\",\r\n      \"required\": true,\r\n      \"options\": [\"8GB\",\"12GB\",\"16GB\"]\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "533"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"215-2Sea6UGrDU5qHPI3ZaKow6DtnzA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:06:35 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Category updated successfully\",\n    \"data\": {\n        \"_id\": \"6a7d902868df2db1faecd9ea\",\n        \"name\": \"Smart Phones\",\n        \"slug\": \"smart-phones\",\n        \"description\": \"Update Mobile phones category\",\n        \"attributes\": [\n            {\n                \"key\": \"color\",\n                \"label\": \"Color\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"Black\",\n                    \"Blue\",\n                    \"White\",\n                    \"Red\"\n                ]\n            },\n            {\n                \"key\": \"storage\",\n                \"label\": \"Storage\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"8GB\",\n                    \"12GB\",\n                    \"16GB\"\n                ]\n            }\n        ],\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-13T09:36:41.019Z\",\n        \"updatedAt\": \"2026-08-13T10:06:35.390Z\",\n        \"__v\": 0\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Category With Duplicate Name",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Category With Duplicate Name",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNTA0MSwiZXhwIjoxNzg2NjE1OTQxfQ.dRSlEVOygINFADr1ApP0NM3_VWQK9akdYJaSS3QweM0",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\" :\"Cars\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "138"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"8a-m0wC7rm8p4IrmxktxWoULw0wAik\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:12:12 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Cars\",\n            \"msg\": \"Category with name Cars already exists\",\n            \"path\": \"name\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Category With Invalid Slug",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Category With Invalid Slug",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNjEwOCwiZXhwIjoxNzg2NjE3MDA4fQ.H9J-Na43TGtoCAx3puMjq3upEq-sqGD3xiqFGpAfvv8",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"slug\": \"Smartphones\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "182"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b6-JqMjE5v6T5eEJ2TDJ++0gCJWrcE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:15:42 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"Smartphones\",\n            \"msg\": \"Slug must be lowercase and contain only alphanumeric characters and hyphens\",\n            \"path\": \"slug\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Delete Category",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjYxNjEwOCwiZXhwIjoxNzg2NjE3MDA4fQ.H9J-Na43TGtoCAx3puMjq3upEq-sqGD3xiqFGpAfvv8",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "555"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"22b-fLlSf5zDxo6BdrclhqbcsXKvqP8\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:17:20 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Category deleted successfully\",\n    \"data\": {\n        \"_id\": \"6a7d902868df2db1faecd9ea\",\n        \"name\": \"Smart Phones\",\n        \"slug\": \"smart-phones\",\n        \"description\": \"Update Mobile phones category\",\n        \"attributes\": [\n            {\n                \"key\": \"color\",\n                \"label\": \"Color\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"Black\",\n                    \"Blue\",\n                    \"White\",\n                    \"Red\"\n                ]\n            },\n            {\n                \"key\": \"storage\",\n                \"label\": \"Storage\",\n                \"type\": \"select\",\n                \"required\": true,\n                \"options\": [\n                    \"8GB\",\n                    \"12GB\",\n                    \"16GB\"\n                ]\n            }\n        ],\n        \"deletedAt\": \"2026-08-13T10:17:20.655Z\",\n        \"createdAt\": \"2026-08-13T09:36:41.019Z\",\n        \"updatedAt\": \"2026-08-13T10:17:20.656Z\",\n        \"__v\": 0\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Deleted Category",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Deleted Category",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories/slug/smart-phones",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories",
+                    "slug",
+                    "smart-phones"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "128"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"80-2WtEKSCjkG02qyTcOosvxA36vvk\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Thu, 13 Aug 2026 10:18:03 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": \"smart-phones\",\n            \"msg\": \"Category not found\",\n            \"path\": \"slug\",\n            \"location\": \"params\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Variants",
+      "item": [
+        {
+          "name": "Create Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwNzU3NiwiZXhwIjoxNzg2ODA4NDc2fQ.J1QsfWFESj0Eu-Lnghy4WeSy-J6mOTtm3Io6KSfUpgE",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"sku\": \"IPHONE-17-PRO-BLACK-256\",\r\n  \"attributes\": {\r\n    \"color\": \"Black\",\r\n    \"storage\": \"256GB\"\r\n  },\r\n  \"price\": 1199,\r\n  \"stock\": 10\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/iphone-17-pro/variants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "iphone-17-pro",
+                    "variants"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "325"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"145-layJt3IyubVmUj2y2QqT7SHsBSA\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:30:37 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Variant created successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-BLACK-256\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"256GB\"\n        },\n        \"price\": 1199,\n        \"stock\": 10,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T15:30:37.591Z\",\n        \"updatedAt\": \"2026-08-15T15:30:37.591Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Variants By Product",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": []
+        },
+        {
+          "name": "Create Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwODYzOSwiZXhwIjoxNzg2ODA5NTM5fQ.-0J5OP7_WWKVNdXw3ngi08b6XH6XitK0Lym2ZD1eE1M",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"sku\": \"IPHONE-17-PRO-RED-512\",\r\n  \"attributes\": {\r\n    \"color\": \"Red\",\r\n    \"storage\": \"512GB\"\r\n  },\r\n  \"price\": 1499,\r\n  \"stock\": 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/iphone-17-pro/variants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "iphone-17-pro",
+                    "variants"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "320"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"140-g+V7RTqZk//Pm/ycOxEz3QddKhQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:44:31 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Variant created successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-RED-512\",\n        \"attributes\": {\n            \"color\": \"Red\",\n            \"storage\": \"512GB\"\n        },\n        \"price\": 1499,\n        \"stock\": 5,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T15:44:31.587Z\",\n        \"updatedAt\": \"2026-08-15T15:44:31.587Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Variant By SKU",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Get Variant By SKU",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/variants/sku/IPHONE-17-PRO-BLACK-256",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "variants",
+                    "sku",
+                    "IPHONE-17-PRO-BLACK-256"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "325"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"145-fFeg17GeP2CoSBkHAd8XjEVnXYY\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:48:10 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Variant fetched successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-BLACK-256\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"256GB\"\n        },\n        \"price\": 1199,\n        \"stock\": 10,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T15:30:37.591Z\",\n        \"updatedAt\": \"2026-08-15T15:30:37.591Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Variant",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwODYzOSwiZXhwIjoxNzg2ODA5NTM5fQ.-0J5OP7_WWKVNdXw3ngi08b6XH6XitK0Lym2ZD1eE1M",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"price\": 1149,\r\n  \"stock\": 15\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/variants/sku/IPHONE-17-PRO-BLACK-256",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "variants",
+                    "sku",
+                    "IPHONE-17-PRO-BLACK-256"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "325"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"145-pbVRd3pSPZvQT+t08js6p2fMsok\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:50:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Variant updated successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-BLACK-256\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"256GB\"\n        },\n        \"price\": 1149,\n        \"stock\": 15,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T15:30:37.591Z\",\n        \"updatedAt\": \"2026-08-15T15:50:32.345Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Purchase Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Purchase Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwODYzOSwiZXhwIjoxNzg2ODA5NTM5fQ.-0J5OP7_WWKVNdXw3ngi08b6XH6XitK0Lym2ZD1eE1M",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"quantity\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/variants/sku/IPHONE-17-PRO-BLACK-256/purchase",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "variants",
+                    "sku",
+                    "IPHONE-17-PRO-BLACK-256",
+                    "purchase"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "328"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"148-FkENsY6wXJLwOcDxp6dxXfcIxiQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:52:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Purchase simulated successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-BLACK-256\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"256GB\"\n        },\n        \"price\": 1149,\n        \"stock\": 13,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-15T15:30:37.591Z\",\n        \"updatedAt\": \"2026-08-15T15:52:49.150Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "If Purchase Variant More Than Stock",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "If Purchase Variant More Than Stock",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwODYzOSwiZXhwIjoxNzg2ODA5NTM5fQ.-0J5OP7_WWKVNdXw3ngi08b6XH6XitK0Lym2ZD1eE1M",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"quantity\": 20\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/variants/sku/IPHONE-17-PRO-BLACK-256/purchase",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "variants",
+                    "sku",
+                    "IPHONE-17-PRO-BLACK-256",
+                    "purchase"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "97"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"61-TVVDiMA+pEl5PGo/PGPN1auFn60\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:55:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"code\": 400,\n    \"message\": \"Insufficient stock for this variant\",\n    \"data\": null,\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Delete Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Delete Variant",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzhjYjI4MDA0M2I1ODUyNWFhZDRlMSIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4NjgwODYzOSwiZXhwIjoxNzg2ODA5NTM5fQ.-0J5OP7_WWKVNdXw3ngi08b6XH6XitK0Lym2ZD1eE1M",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/variants/sku/IPHONE-17-PRO-BLACK-256",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "variants",
+                    "sku",
+                    "IPHONE-17-PRO-BLACK-256"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "347"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"15b-3FUuJqHcUrWp3C+CQO3WcVNlz/Y\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Sat, 15 Aug 2026 15:57:15 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Variant deleted successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"iPhone 17 Pro Max\"\n        },\n        \"sku\": \"IPHONE-17-PRO-BLACK-256\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"256GB\"\n        },\n        \"price\": 1149,\n        \"stock\": 13,\n        \"deletedAt\": \"2026-08-15T15:57:15.786Z\",\n        \"createdAt\": \"2026-08-15T15:30:37.591Z\",\n        \"updatedAt\": \"2026-08-15T15:57:15.786Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "categoryId",
+      "value": ""
+    }
+  ]
+}
