@@ -3475,6 +3475,532 @@
           ]
         }
       ]
+    },
+    {
+      "name": "Carts",
+      "item": [
+        {
+          "name": "Register New User",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Register New User",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Cart Test User\",\r\n  \"email\": \"carttest@example.com\",\r\n  \"phoneNumber\": \"0592351580\",\r\n  \"password\": \"Password123\",\r\n  \"role\": \"customer\",\r\n  \"address\": {\r\n    \"city\": \"Gaza\",\r\n    \"street\": \"Main Street\",\r\n    \"country\": \"Palestine\"\r\n  }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/auth/register",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "778"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"30a-vqVbPlgt60RxkKnRqiv0ALqurQQ\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 14:58:54 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Cart Test User\",\n            \"email\": \"carttest@example.com\",\n            \"phoneNumber\": \"0592351580\",\n            \"role\": \"customer\",\n            \"address\": {\n                \"city\": \"Gaza\",\n                \"street\": \"Main Street\",\n                \"country\": \"Palestine\"\n            },\n            \"_id\": \"6a8321ae256c20305b9c1774\",\n            \"createdAt\": \"2026-08-17T14:58:54.339Z\",\n            \"updatedAt\": \"2026-08-17T14:58:54.339Z\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3ODczNCwiZXhwIjoxNzg2OTc5NjM0fQ.vFHqfeqXB5cAkiHJu9Cmae4K3RoxBmv-8VekcmC0WYU\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsImlhdCI6MTc4Njk3ODczNCwiZXhwIjoxNzg5NTcwNzM0fQ.Hv-fsElYS2LfOgOTfEdujZf4lhmVj_EJTJshOsxKyhs\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "login user",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "login user",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"email\": \"carttest@example.com\",\r\n  \"password\": \"Password123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/auth/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "768"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"300-HOLL/okhTzUW0ChfJHD+joETCqw\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:00:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"address\": {\n                \"city\": \"Gaza\",\n                \"street\": \"Main Street\",\n                \"country\": \"Palestine\"\n            },\n            \"_id\": \"6a8321ae256c20305b9c1774\",\n            \"name\": \"Cart Test User\",\n            \"email\": \"carttest@example.com\",\n            \"phoneNumber\": \"0592351580\",\n            \"role\": \"customer\",\n            \"createdAt\": \"2026-08-17T14:58:54.339Z\",\n            \"updatedAt\": \"2026-08-17T14:58:54.339Z\"\n        },\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3ODg0NywiZXhwIjoxNzg2OTc5NzQ3fQ.w7TXyXj4IgzLlOM45JJ3vllEJUtsm6Bzm9idaKZj4_I\",\n        \"refreshToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsImlhdCI6MTc4Njk3ODg0NywiZXhwIjoxNzg5NTcwODQ3fQ.Z4avfC9egUqaSWQ2pXSAbgS60Zv4pakRve8b07oxt4Y\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Cart With First Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create Cart With First Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3ODg0NywiZXhwIjoxNzg2OTc5NzQ3fQ.w7TXyXj4IgzLlOM45JJ3vllEJUtsm6Bzm9idaKZj4_I",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"variantSku\": \"IPHONE-17-PRO-RED-512\",\r\n  \"quantity\": 1\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/cart",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "321"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"141-YTAfRZoV5kKXNTY+jYYud30OyiE\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:03:18 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Cart updated successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Cart Test User\"\n        },\n        \"items\": [\n            {\n                \"variant\": {\n                    \"sku\": \"IPHONE-17-PRO-RED-512\",\n                    \"attributes\": {\n                        \"color\": \"Red\",\n                        \"storage\": \"512GB\"\n                    },\n                    \"price\": 1499\n                },\n                \"quantity\": 1\n            }\n        ],\n        \"createdAt\": \"2026-08-17T15:03:18.584Z\",\n        \"updatedAt\": \"2026-08-17T15:03:18.584Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Existing Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Update Existing Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3ODg0NywiZXhwIjoxNzg2OTc5NzQ3fQ.w7TXyXj4IgzLlOM45JJ3vllEJUtsm6Bzm9idaKZj4_I",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"variantSku\": \"IPHONE-17-PRO-RED-512\",\r\n  \"quantity\": 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/cart",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "86"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"56-wbpwQaqc4U+05AgdTtnFzoeVzF4\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:07:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Cart updated successfully\",\n    \"data\": null,\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create New Variant",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Create New Variant",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3OTgyMiwiZXhwIjoxNzg2OTgwNzIyfQ.-2fBuhGAOcuNx0Zsvr6LM9x1Jymzk3dZIq3Z5L_RxBw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"sku\": \"MACBOOK-AIR-BLACK-512\",\r\n  \"attributes\": {\r\n    \"color\": \"Black\",\r\n    \"storage\": \"512GB\"\r\n  },\r\n  \"price\": 1499,\r\n  \"stock\": 10\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/products/macbook-air/variants",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "products",
+                    "macbook-air",
+                    "variants"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "317"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"13d-+dV1oB6HTQ78fmzij5+B9OQHAas\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:17:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 201,\n    \"message\": \"Variant created successfully\",\n    \"data\": {\n        \"product\": {\n            \"name\": \"MacBook Air\"\n        },\n        \"sku\": \"MACBOOK-AIR-BLACK-512\",\n        \"attributes\": {\n            \"color\": \"Black\",\n            \"storage\": \"512GB\"\n        },\n        \"price\": 1499,\n        \"stock\": 10,\n        \"deletedAt\": null,\n        \"createdAt\": \"2026-08-17T15:17:23.256Z\",\n        \"updatedAt\": \"2026-08-17T15:17:23.256Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add New Variant In Same Cart",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Add New Variant In Same Cart",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk3OTgyMiwiZXhwIjoxNzg2OTgwNzIyfQ.-2fBuhGAOcuNx0Zsvr6LM9x1Jymzk3dZIq3Z5L_RxBw",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"variantSku\": \"MACBOOK-AIR-BLACK-512\",\r\n  \"quantity\": 5\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/cart",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "440"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"1b8-D6V85YMW1iS21Vj8m1Hkryfuf1I\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:19:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": true,\n    \"code\": 200,\n    \"message\": \"Cart updated successfully\",\n    \"data\": {\n        \"user\": {\n            \"name\": \"Cart Test User\"\n        },\n        \"items\": [\n            {\n                \"variant\": {\n                    \"sku\": \"IPHONE-17-PRO-RED-512\",\n                    \"attributes\": {\n                        \"color\": \"Red\",\n                        \"storage\": \"512GB\"\n                    },\n                    \"price\": 1499\n                },\n                \"quantity\": 1\n            },\n            {\n                \"variant\": {\n                    \"sku\": \"MACBOOK-AIR-BLACK-512\",\n                    \"attributes\": {\n                        \"color\": \"Black\",\n                        \"storage\": \"512GB\"\n                    },\n                    \"price\": 1499\n                },\n                \"quantity\": 5\n            }\n        ],\n        \"createdAt\": \"2026-08-17T15:03:18.584Z\",\n        \"updatedAt\": \"2026-08-17T15:19:58.072Z\"\n    },\n    \"meta\": {}\n}"
+            }
+          ]
+        },
+        {
+          "name": "Insufficient Stock",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Insufficient Stock",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhODMyMWFlMjU2YzIwMzA1YjljMTc3NCIsInJvbGUiOiJjdXN0b21lciIsImlhdCI6MTc4Njk4MTA3OSwiZXhwIjoxNzg2OTgxOTc5fQ.WUec5tm6HEqFvUgEeVDJmem9EsvGTui5MOSFZoOOv10",
+                    "type": "text"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"variantSku\": \"MACBOOK-AIR-BLACK-512\",\r\n  \"quantity\": 11\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/cart",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "cart"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "X-Powered-By",
+                  "value": "Express"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "183"
+                },
+                {
+                  "key": "ETag",
+                  "value": "W/\"b7-sGVJL+DMcR0lGslDUw8riLeHU8A\""
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 17 Aug 2026 15:38:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=5"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"status\": false,\n    \"errors\": [\n        {\n            \"type\": \"field\",\n            \"value\": 11,\n            \"msg\": \"Requested quantity exceeds available stock. Available stock: 10, already in cart: 5\",\n            \"path\": \"quantity\",\n            \"location\": \"body\"\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "New Folder",
+      "item": []
     }
   ],
   "variable": [
