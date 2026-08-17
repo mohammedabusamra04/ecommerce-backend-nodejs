@@ -18,6 +18,9 @@ import { Variant } from "../modules/variants/variant.model.js";
 import { VariantRepository } from "../modules/variants/variant.repository.js";
 import { VariantService } from "../modules/variants/variant.service.js";
 
+import { Cart } from "../modules/carts/cart.model.js";
+import { CartRepository } from "../modules/carts/cart.repository.js";
+import { CartService } from "../modules/carts/cart.service.js";
 
 const userRepository = new UserRepository(User);
 export const userService = new UserService(userRepository);
@@ -33,3 +36,6 @@ export const productService = new ProductService(productRepository, categoryRepo
 
 const variantRepository = new VariantRepository(Variant);
 export const variantService = new VariantService(variantRepository, productRepository);
+
+const cartRepository = new CartRepository(Cart);
+export const cartService = new CartService(cartRepository,variantRepository);
