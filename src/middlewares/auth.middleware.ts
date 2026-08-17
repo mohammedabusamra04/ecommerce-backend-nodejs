@@ -2,7 +2,6 @@ import type { NextFunction, Request, Response } from "express";
 import { verifyAccessToken } from "../utils/jwt.js";
 import { AppError } from "../utils/AppError.js";
 
-type UserRole = "customer" | "admin";
 
 export async function authMiddleware(
     req: Request,
