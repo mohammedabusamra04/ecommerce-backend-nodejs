@@ -8,7 +8,7 @@ export const addOrUpdateCartValidator = [
     .trim()
     .notEmpty()
     .withMessage("Variant SKU is required")
-    .custom(async (value) => {
+    .custom(async (value, { req }) => {
       const variant = await Variant.findOne({
         sku: value,
         deletedAt: null,
@@ -17,6 +17,8 @@ export const addOrUpdateCartValidator = [
       if (!variant) {
         throw AppError.notFound("Variant not found");
       }
+
+      req.variant = variant;
 
       return true;
     }),
@@ -27,33 +29,13 @@ export const addOrUpdateCartValidator = [
     .isInt({ min: 1 })
     .withMessage("Quantity must be at least 1")
     .custom(async (value, { req }) => {
-      const variantSku = req.body.variantSku;
-
-      const variant = await Variant.findOne({
-        sku: variantSku,
-        deletedAt: null,
-      });
-
-      if (!variant) {
-        return true;
-      }
+      const variant = req.variant;
 
       const cart = await Cart.findOne({
         user: req.user!.id,
       });
 
-      
-      if (!cart) {
-        if (Number(value) > variant.stock) {
-          throw AppError.badRequest(
-            `Requested quantity exceeds available stock. Available stock: ${variant.stock}`
-          );
-        }
-
-        return true;
-      }
-
-      const existingItem = cart.items.find(
+      const existingItem = cart?.items.find(
         (item) =>
           item.variant.toString() ===
           variant._id.toString()
