@@ -1,4 +1,5 @@
 import mongoose, { Schema, Document } from "mongoose";
+import { Cart } from "../carts/cart.model.js";
 
 export interface IUser extends Document {
     name: string;
@@ -77,5 +78,12 @@ const userSchema = new Schema<IUser>(
         }
 }
 );
+
+userSchema.post("save", async function (cart) {
+    await Cart.create({
+        user: cart._id,
+        items: [],
+    });
+});
 
 export const User = mongoose.model<IUser>("User", userSchema);
