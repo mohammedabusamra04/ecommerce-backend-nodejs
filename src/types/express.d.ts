@@ -1,4 +1,5 @@
 import type { TokenPayload } from "../utils/jwt.js";
+import type { Variant } from "../modules/variants/variant.model.js";
 
 declare global {
     namespace Express {
@@ -22,9 +23,9 @@ declare global {
             ): Response;
         }
 
-
         interface Request {
             user?: TokenPayload;
+            variant?: Variant;
         }
     }
 }
