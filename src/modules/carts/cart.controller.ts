@@ -9,7 +9,8 @@ export async function addOrUpdateCart(
 ): Promise<void> {
   const cart = await cartService.addOrUpdateCart(
     req.user!.id,
-    req.body
+    req.variant!._id.toString(),
+    req.body.quantity
   );
 
   res.success({
