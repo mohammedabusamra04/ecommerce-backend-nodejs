@@ -38,4 +38,4 @@ const variantRepository = new VariantRepository(Variant);
 export const variantService = new VariantService(variantRepository, productRepository);
 
 const cartRepository = new CartRepository(Cart);
-export const cartService = new CartService(cartRepository,variantRepository);
+export const cartService = new CartService(cartRepository);
